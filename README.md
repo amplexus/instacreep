@@ -8,11 +8,6 @@ This code is posted for informational purposes only. Use of Instagram is governe
 
 ===========
 ---
-
-Downloads images and videos from instagram accounts.
-
-===========
----
 **Requirements**
 
 Nothing fancy, wget, bash, sed, tail, grep, echo.  Standard GNU/bash.
