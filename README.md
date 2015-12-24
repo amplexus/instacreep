@@ -8,6 +8,7 @@ This code is posted for informational purposes only. Use of Instagram is governe
 ===========
 ---
 **Requirements**
+
 Nothing fancy, wget, bash, sed, tail, grep, echo.  Standard GNU/bash.
 
 ===========
