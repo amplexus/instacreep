@@ -7,6 +7,11 @@ This code is posted for informational purposes only. Use of Instagram is governe
 
 ===========
 ---
+**Requirements**
+Nothing fancy, wget, bash, sed, tail, grep, echo.  Standard GNU/bash.
+
+===========
+---
 **Setup**
 
 Edit instacreep.sh and instacreep-full.sh 'savepath=""' to point to the directory to save files in.
