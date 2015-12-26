@@ -18,11 +18,11 @@ Nothing fancy, wget, bash, sed, tail, grep, echo.  Standard GNU/bash.
 
 Edit instacreep.sh and instacreep-full.sh 'savepath=""' to point to the directory to save files in.
 
-In the same directory, add a text file named instacreep.rc with a newline delimited list of usernames.
+In the same directory, add a text file named instacreep.txt with a newline delimited list of usernames.
 
 If savepath="/home/user/Pictures/instacreep/" for example,
 
-then file /home/user/Pictures/instacreep/instacreep.rc should contain your list.
+then file /home/user/Pictures/instacreep/instacreep.txt should contain your list.
 
 ===========
 ---
