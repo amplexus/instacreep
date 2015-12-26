@@ -26,7 +26,7 @@ while true
 do
    if cd "$savepath"
    then
-      mapfile -t usernames < <(cat instacreep.rc)
+      mapfile -t usernames < <(cat instacreep.txt)
       for i in "${usernames[@]}"
       do
          creep "$i"
