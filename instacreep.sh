@@ -36,6 +36,6 @@ do
    fi
    let random=$RANDOM%360
    let sleepy=45+$random
-   echo "sleeping $sleepy"
+   echo "sleeping $sleepy on $(date)"
    sleep $sleepy
 done
