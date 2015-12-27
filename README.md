@@ -34,4 +34,4 @@ instacreep.sh monitors the last 20 posts of the user for updates.  Checks in a r
 
 instacreep will populate your savepath with a simple directory structure with the usernames supplied.
 
-tagcreep.sh is similar, checks for latest updates to any tag you supply.  Name the taglist tag.txt and specify a directory to store them.
+tagcreep.sh is similar, checks for latest updates to any tag you supply.  Name the taglist tags.txt and specify a directory to store them.
