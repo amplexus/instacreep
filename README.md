@@ -33,3 +33,5 @@ instacreep-full.sh bootstraps the backup, grabbing all posts.  May only need to 
 instacreep.sh monitors the last 20 posts of the user for updates.  Checks in a range of 45 seconds and 6m45s.
 
 instacreep will populate your savepath with a simple directory structure with the usernames supplied.
+
+tagcreep.sh is similar, checks for latest updates to any tag you supply.  Name the taglist tag.txt and specify a directory to store them.
