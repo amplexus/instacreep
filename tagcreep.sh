@@ -15,7 +15,7 @@ then
       mapfile -t links < <( wget --quiet -O - "https://www.instagram.com/explore/tags/${username}/" | grep -e "window._sharedData" | sed -e 's/\\//g' -e 's/display_src"\:"/\n/g' | sed -e 's/".*//g' | grep -v script )
       for i in "${links[@]}"
       do
-            mpv "$i"
+            wget -nc "$i"
       done
    fi
 else
