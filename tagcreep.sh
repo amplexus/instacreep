@@ -15,12 +15,12 @@ then
       mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/explore/tags/${username}/" | sed -e 's/\\//g' -e 's/code/\n/g' | grep is_video\"\:false | sed -e 's/.*display_src"\:"//g' -e 's/".*//g')
       for i in "${links[@]}"
       do
-            wget -nc "$i"
+            wget -nc "${i%%\?*}"
       done
       mapfile -t videos < <( wget --quiet -O - $(wget --quiet -O - "https://www.instagram.com/explore/tags/${username}/" | sed -e 's/\\//g' -e 's/code/\n/g' | grep is_video\"\:true | sed -e 's/"\:"/https\:\/\/www.instagram.com\/p\//g' -e 's/".*//g')|  grep secure_url | sed -e 's/.*content="//g' -e 's/".*//g')
       for i in "${videos[@]}"
       do
-         wget -nc "$i"
+         wget -nc "${i%%\?*}"
       done
    fi
 else
