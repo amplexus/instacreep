@@ -15,7 +15,7 @@ then
       mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/${username}/media" | sed -e 's/standard/\n/g' | sed -e 's/_resolution":{"url":"//g'| grep -v status | sed -e 's/".*//g' -e 's/\\//g')
       for i in "${links[@]}"
       do
-            wget --quiet -nc "$i"
+            wget --quiet -nc "${i%%\?*}"
       done
    fi
 else
