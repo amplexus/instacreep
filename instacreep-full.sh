@@ -16,7 +16,7 @@ then
       maxid=$(wget --quiet -O - "https://www.instagram.com/${username}/media" | sed -e 's/standard/\n/g' | grep -e "\"image\",\"id\"" | sed -e 's/.*\"image\",\"id\"\:\"//g' -e 's/\".*//g' | tail -n 1)
       for i in "${links[@]}"
       do
-            wget -nc "$i"
+            wget -nc "${i%%\?*}"
       done
       until [[ "$maxid" == "" ]]
       do
@@ -24,7 +24,7 @@ then
          maxid=$(wget --quiet -O - "https://www.instagram.com/${username}/media/?max_id=${maxid}" | sed -e 's/standard/\n/g' | grep -e "\"image\",\"id\"" | sed -e 's/.*\"image\",\"id\"\:\"//g' -e 's/\".*//g' | tail -n 1)
          for i in "${links[@]}"
          do
-               wget -nc "$i"
+               wget -nc "${i%%\?*}"
          done
          sleep 1
       done
