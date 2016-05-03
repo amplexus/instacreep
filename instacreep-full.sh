@@ -12,7 +12,7 @@ then
    fi
    if cd "${username}"
    then
-      mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/${username}/media" | sed -e 's/standard/\n/g' | sed -e 's/_resolution":{"url":"//g'| grep -v status | sed -e 's/".*//g' -e 's/\\//g')
+      mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/${username}/media" | sed -e 's/standard/\n/g' | sed -e 's/_resolution": {"url": "//g'| grep -v status | sed -e 's/".*//g' -e 's/\\//g')
       maxid=$(wget --quiet -O - "https://www.instagram.com/${username}/media" | sed -e 's/standard/\n/g' | grep -e "\"image\",\"id\"" | sed -e 's/.*\"image\",\"id\"\:\"//g' -e 's/\".*//g' | tail -n 1)
       for i in "${links[@]}"
       do
@@ -20,7 +20,7 @@ then
       done
       until [[ "$maxid" == "" ]]
       do
-         mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/${username}/media/?max_id=${maxid}" | sed -e 's/standard/\n/g' | sed -e 's/_resolution":{"url":"//g'| grep -v status | sed -e 's/".*//g' -e 's/\\//g')
+         mapfile -t links < <(wget --quiet -O - "https://www.instagram.com/${username}/media/?max_id=${maxid}" | sed -e 's/standard/\n/g' | sed -e 's/_resolution": {"url": "//g'| grep -v status | sed -e 's/".*//g' -e 's/\\//g')
          maxid=$(wget --quiet -O - "https://www.instagram.com/${username}/media/?max_id=${maxid}" | sed -e 's/standard/\n/g' | grep -e "\"image\",\"id\"" | sed -e 's/.*\"image\",\"id\"\:\"//g' -e 's/\".*//g' | tail -n 1)
          for i in "${links[@]}"
          do
